@@ -7,6 +7,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# require 'faker'
+
+# 3.times do 
+#   contact = Contact.new(
+#     first_name: Faker::Name.unique.first_name,
+#     last_name: Faker::Name.unique.last_name,
+#     phone_number: Faker::PhoneNumber.unique.phone_number)
+#   contact.save
+# end
+
 
 contact = Contact.new(first_name: "John", last_name: "Wick", phone_number: "222-222-2222"
   )
@@ -19,3 +29,4 @@ contact.save
 contact = Contact.new(first_name: "Clark", last_name: "Kent", phone_number: "444-444-4444"
   )
 contact.save
+
