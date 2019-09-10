@@ -1,7 +1,10 @@
 class Api::ContactsController < ApplicationController
 
   def index
-    @contact = Contact.all 
+    @contact = Contact.all
+    if params[:search]
+      @contact = @contact.where("first_name iLike ?", "%#{params[:search]}%")
+    end 
     render 'index.json.jb'
   end
 
@@ -17,7 +20,8 @@ class Api::ContactsController < ApplicationController
       middle_name: params[:middle_name],  
       last_name: params[:last_name], 
       phone_number: params[:phone_number], 
-      email: params[:email]
+      email: params[:email], 
+      user_id: current_user.id
       )
     if @contact.save
       render 'show.json.jb'

@@ -1,6 +1,6 @@
 class Contact < ApplicationRecord
 
-  validates :first_name, :last_name, presence: true
+  # validates :first_name, :last_name, presence: true
   # validates :middle_name, allow_blank: true
 
   def pretty_created
@@ -14,4 +14,6 @@ class Contact < ApplicationRecord
   def full_name
     full_name = "#{first_name} #{last_name}"
   end
+
+  belongs_to :user
 end
