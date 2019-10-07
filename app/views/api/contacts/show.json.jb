@@ -1,13 +1,1 @@
-# {
-#   id: @contact.id, 
-#   first_name: @contact.first_name, 
-#   last_name: @contact.last_name, 
-#   phone_number: @contact.phone_number,
-#   full_name: @contact.full_name, 
-#   formatted: {
-#     created_at: @contact.pretty_created, 
-#     updated_at: @contact.pretty_updated
-#   } 
-# }
-
 render partial: "contact.json.jb", locals: { contact: @contact }
